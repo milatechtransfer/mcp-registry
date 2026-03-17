@@ -58,3 +58,9 @@ def test_cors_headers(api_url):
     assert response.headers.get("Access-Control-Allow-Origin") == "*" or \
            requests.get(api_url).headers.get("Access-Control-Allow-Origin") == "*", \
            "CORS headers missing. VS Code may block this registry."
+    
+def test_json_header(api_url):
+    response = requests.get(api_url)
+    content_type = response.headers.get("Content-Type", "")
+    assert "application/json" in content_type, \
+        f"Expected application/json header, but got {content_type}. VS Code might ignore the file."
