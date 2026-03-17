@@ -16,6 +16,11 @@
             }
           }
         ]
+      },
+      "_meta": {
+        "io.modelcontextprotocol.registry/official": {
+          "id": "github"
+        }
       }
     }
   ]
