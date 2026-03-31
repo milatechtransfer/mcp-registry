@@ -22,6 +22,40 @@
           "id": "github"
         }
       }
+    },
+    {
+      "server": {
+        "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+        "name": "comet-mcp",
+        "title": "Comet MCP",
+        "description": "Connects MCP clients to Comet using an API key and workspace.",
+        "version": "0.1.0",
+        "packages": [
+          {
+            "registryType": "pypi",
+            "identifier": "comet-mcp",
+            "transport": {
+              "type": "stdio"
+            },
+            "runtimeHint": "uvx",
+            "environmentVariables": [
+              {
+                "name": "COMET_API_KEY",
+                "description": "Comet API key used to authenticate requests.",
+                "isRequired": true,
+                "isSecret": true,
+                "placeholder": "your_api_key_here"
+              },
+              {
+                "name": "COMET_WORKSPACE",
+                "description": "Comet workspace name to scope operations.",
+                "isRequired": true,
+                "placeholder": "your_workspace_name"
+              }
+            ]
+          }
+        ]
+      }
     }
   ],
   "metadata": {
